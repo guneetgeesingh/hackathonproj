@@ -23,8 +23,7 @@ var mentorSchema = new Schema({
     unique: true
   },
   phone: String,
-  dob: Date,
-  gender: String
+  dob: Date
 }, {
   timestamps: true
 })
@@ -32,5 +31,6 @@ var mentorSchema = new Schema({
 var Mentor = mongoose.model('Mentor', mentorSchema)
 
 module.exports = {
-  Show: Show
+  Mentor: Mentor,
+  mentorSchema:mentorSchema
 }

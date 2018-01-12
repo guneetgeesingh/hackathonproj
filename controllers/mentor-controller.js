@@ -65,7 +65,7 @@ function show(req, res) {
 
 function update(req, res) {
   var id = req.params.id;
-  var body = _.pick(req.body, ["firstName", "lastName", "email", "phone", "dob", "address1", "address2", "city", "state", "zip", "cardNumber", "cardType", "security"])
+  var body = _.pick(req.body, ["firstName", "lastName", "email", "phone", "dob"])
   Mentor.findByIdAndUpdate(id, {
     $set: body
   }, {
