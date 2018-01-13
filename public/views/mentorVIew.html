@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="row">
+      <h1>Mentors!</h1>
+      <div class="form-group col-md-10">
+        <input type="text" class="form-control" ng-model="mentorSearch" placeholder="Search For Mentors...">
+      </div>
+  
+      <div class="col-md-2">
+        <button class="btn btn-primary cbtn" ui-sref="mentorsNew">New Mentor</button>
+      </div>
+    </div>
+  
+    <div class="row">
+      <table class="table table-striped table-hover">
+        <thead>
+          <th>#</th>
+          <th>Name:</th>
+          <th>Email:</th>
+          <th>Phone:</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="mentor in mentors | filter: mentorSearch" ui-sref="mentorsShow({id: mentor._id})">
+            <td>{{ $index }}</td>
+            <td>{{ mentor.firstName }} {{ mentor.lastName }}</td>
+            <td>{{ mentor.email }}</td>
+            <td>{{ mentor.phone}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>
